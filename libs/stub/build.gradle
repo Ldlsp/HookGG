@@ -3,6 +3,9 @@ plugins {
 }
 
 android {
+    namespace "me.hd.ggstub"
+    compileSdk 36
+
     sourceSets {
         main {
             java {
