@@ -1,6 +1,6 @@
 package me.hd.hookgg.hook.hooker.elgg.v125
 
-import com.highcapable.yukihookapi.hook.factory.method
+import com.highcapable.kavaref.KavaRef.Companion.resolve
 import me.hd.hookgg.config.bean.FuncObj
 import me.hd.hookgg.config.data.ResStrData.FILTER_INVALID_LENGTH
 import me.hd.hookgg.config.data.ResStrData.FILTER_INVALID_PARAMS
@@ -110,11 +110,11 @@ object ELGGv125Hooker : BaseGGHooker() {
 
     private fun addListItems() {
         "android.ext.۟ۧ۠ۡۤ"
-            .toClassOrNull()?.apply {
-                method {
+            .toClassOrNull()?.resolve()?.apply {
+                firstMethod {
                     name = "b"
-                    paramCount = 1
-                }.ignored().hook {
+                    parameterCount = 1
+                }.hook {
                     after {
                         val varArgs = args(0).any()
                         val items = varArgs.checktable(1)
@@ -131,17 +131,17 @@ object ELGGv125Hooker : BaseGGHooker() {
                             if (printReturn) "--[[$result]]" else ""
                         )
                     }
-                }.ignoredAllFailure()
+                }
             }
     }
 
     private fun alert() {
         "android.ext.۟ۧ۠ۡۨ"
-            .toClassOrNull()?.apply {
-                method {
+            .toClassOrNull()?.resolve()?.apply {
+                firstMethod {
                     name = "b"
-                    paramCount = 1
-                }.ignored().hook {
+                    parameterCount = 1
+                }.hook {
                     after {
                         val varArgs = args(0).any()
                         val text = varArgs.checkjstring(1)
@@ -157,17 +157,17 @@ object ELGGv125Hooker : BaseGGHooker() {
                             if (printReturn) "--[[$result]]" else ""
                         )
                     }
-                }.ignoredAllFailure()
+                }
             }
     }
 
     private fun allocatePage() {
         "android.ext.۟ۧ۠۠ۨ"
-            .toClassOrNull()?.apply {
-                method {
+            .toClassOrNull()?.resolve()?.apply {
+                firstMethod {
                     name = "d"
-                    paramCount = 1
-                }.ignored().hook {
+                    parameterCount = 1
+                }.hook {
                     after {
                         val varArgs = args(0).any()
                         val mode = varArgs.optint(1, 6)
@@ -179,17 +179,17 @@ object ELGGv125Hooker : BaseGGHooker() {
                             if (printReturn) "--[[$result]]" else ""
                         )
                     }
-                }.ignoredAllFailure()
+                }
             }
     }
 
     private fun bytes() {
         "android.ext.ۦۤ۟ۥ"
-            .toClassOrNull()?.apply {
-                method {
+            .toClassOrNull()?.resolve()?.apply {
+                firstMethod {
                     name = "b"
-                    paramCount = 1
-                }.ignored().hook {
+                    parameterCount = 1
+                }.hook {
                     after {
                         val varArgs = args(0).any()
                         val text = varArgs.checkjstring(1)
@@ -201,17 +201,17 @@ object ELGGv125Hooker : BaseGGHooker() {
                             if (printReturn) "--[[$result]]" else ""
                         )
                     }
-                }.ignoredAllFailure()
+                }
             }
     }
 
     private fun choice() {
         "android.ext.ۦۤ۟ۧ"
-            .toClassOrNull()?.apply {
-                method {
+            .toClassOrNull()?.resolve()?.apply {
+                firstMethod {
                     name = "b"
-                    paramCount = 1
-                }.ignored().hook {
+                    parameterCount = 1
+                }.hook {
                     after {
                         val varArgs = args(0).any()
                         val items = varArgs.checktable(1)
@@ -223,51 +223,51 @@ object ELGGv125Hooker : BaseGGHooker() {
                             if (printReturn) "--[[$result]]" else ""
                         )
                     }
-                }.ignoredAllFailure()
+                }
             }
     }
 
     private fun clearList() {
         "android.ext.ۧۧۢۧ"
-            .toClassOrNull()?.apply {
-                method {
+            .toClassOrNull()?.resolve()?.apply {
+                firstMethod {
                     name = "d"
-                    paramCount = 1
-                }.ignored().hook {
+                    parameterCount = 1
+                }.hook {
                     after {
                         sendLog(
                             "gg.clearList()",
                             if (printReturn) "--[[$result]]" else ""
                         )
                     }
-                }.ignoredAllFailure()
+                }
             }
     }
 
     private fun clearResults() {
         "android.ext.ۧۧۢۤ"
-            .toClassOrNull()?.apply {
-                method {
+            .toClassOrNull()?.resolve()?.apply {
+                firstMethod {
                     name = "d"
-                    paramCount = 1
-                }.ignored().hook {
+                    parameterCount = 1
+                }.hook {
                     after {
                         sendLog(
                             "gg.clearResults()",
                             if (printReturn) "--[[$result]]" else ""
                         )
                     }
-                }.ignoredAllFailure()
+                }
             }
     }
 
     private fun command() {
         "android.ext.ۣۧۧۢ"
-            .toClassOrNull()?.apply {
-                method {
+            .toClassOrNull()?.resolve()?.apply {
+                firstMethod {
                     name = "b"
-                    paramCount = 1
-                }.ignored().hook {
+                    parameterCount = 1
+                }.hook {
                     after {
                         val varArgs = args(0).any()
                         val cmd = varArgs.checkjstring(1)
@@ -277,17 +277,17 @@ object ELGGv125Hooker : BaseGGHooker() {
                             if (printReturn) "--[[$result]]" else ""
                         )
                     }
-                }.ignoredAllFailure()
+                }
             }
     }
 
     private fun copyMemory() {
         "android.ext.ۧۧۢ۠"
-            .toClassOrNull()?.apply {
-                method {
+            .toClassOrNull()?.resolve()?.apply {
+                firstMethod {
                     name = "d"
-                    paramCount = 1
-                }.ignored().hook {
+                    parameterCount = 1
+                }.hook {
                     after {
                         val varArgs = args(0).any()
                         val from = varArgs.checklong(1)
@@ -300,17 +300,17 @@ object ELGGv125Hooker : BaseGGHooker() {
                             if (printReturn) "--[[$result]]" else ""
                         )
                     }
-                }.ignoredAllFailure()
+                }
             }
     }
 
     private fun copyText() {
         "android.ext.ۧۧۢۡ"
-            .toClassOrNull()?.apply {
-                method {
+            .toClassOrNull()?.resolve()?.apply {
+                firstMethod {
                     name = "b"
-                    paramCount = 1
-                }.ignored().hook {
+                    parameterCount = 1
+                }.hook {
                     after {
                         val varArgs = args(0).any()
                         val text = varArgs.checkjstring(1)
@@ -322,17 +322,17 @@ object ELGGv125Hooker : BaseGGHooker() {
                             if (printReturn) "--[[$result]]" else ""
                         )
                     }
-                }.ignoredAllFailure()
+                }
             }
     }
 
     private fun disasm() {
         "android.ext.ۦۤ۟۠"
-            .toClassOrNull()?.apply {
-                method {
+            .toClassOrNull()?.resolve()?.apply {
+                firstMethod {
                     name = "b"
-                    paramCount = 1
-                }.ignored().hook {
+                    parameterCount = 1
+                }.hook {
                     after {
                         val varArgs = args(0).any()
                         val type = varArgs.checkint(1)
@@ -345,17 +345,17 @@ object ELGGv125Hooker : BaseGGHooker() {
                             if (printReturn) "--[[$result]]" else ""
                         )
                     }
-                }.ignoredAllFailure()
+                }
             }
     }
 
     private fun dumpMemory() {
         "android.ext.ۣ۟ۧ۠ۢ"
-            .toClassOrNull()?.apply {
-                method {
+            .toClassOrNull()?.resolve()?.apply {
+                firstMethod {
                     name = "d"
-                    paramCount = 1
-                }.ignored().hook {
+                    parameterCount = 1
+                }.hook {
                     after {
                         val varArgs = args(0).any()
                         val from = varArgs.checklong(1)
@@ -371,17 +371,17 @@ object ELGGv125Hooker : BaseGGHooker() {
                             if (printReturn) "--[[$result]]" else ""
                         )
                     }
-                }.ignoredAllFailure()
+                }
             }
     }
 
     private fun editAll() {
         "android.ext.۟ۧ۠ۢۥ"
-            .toClassOrNull()?.apply {
-                method {
+            .toClassOrNull()?.resolve()?.apply {
+                firstMethod {
                     name = "b"
-                    paramCount = 1
-                }.ignored().hook {
+                    parameterCount = 1
+                }.hook {
                     after {
                         val varArgs = args(0).any()
                         val value = varArgs.checkjstring(1)
@@ -404,34 +404,34 @@ object ELGGv125Hooker : BaseGGHooker() {
                             if (printReturn) "--[[$result]]" else ""
                         )
                     }
-                }.ignoredAllFailure()
+                }
             }
     }
 
     private fun getActiveTab() {
         "android.ext.۟ۧ۠ۢۨ"
-            .toClassOrNull()?.apply {
-                method {
+            .toClassOrNull()?.resolve()?.apply {
+                firstMethod {
                     name = "b"
-                    paramCount = 1
-                }.ignored().hook {
+                    parameterCount = 1
+                }.hook {
                     after {
                         sendLog(
                             "gg.getActiveTab()",
                             if (printReturn) "--[[$result]]" else ""
                         )
                     }
-                }.ignoredAllFailure()
+                }
             }
     }
 
     private fun getConfig() {
         "android.ext.ۣۧۧۡ"
-            .toClassOrNull()?.apply {
-                method {
+            .toClassOrNull()?.resolve()?.apply {
+                firstMethod {
                     name = "a_"
-                    paramCount = 1
-                }.ignored().hook {
+                    parameterCount = 1
+                }.hook {
                     after {
                         val varArgs = args(0).any()
                         val id = varArgs.optint(1, 0)
@@ -440,119 +440,119 @@ object ELGGv125Hooker : BaseGGHooker() {
                             if (printReturn) "--[[$result]]" else ""
                         )
                     }
-                }.ignoredAllFailure()
+                }
             }
     }
 
     private fun getFile() {
         "android.ext.ۧۧۡۤ"
-            .toClassOrNull()?.apply {
-                method {
+            .toClassOrNull()?.resolve()?.apply {
+                firstMethod {
                     name = "a_"
-                    paramCount = 1
-                }.ignored().hook {
+                    parameterCount = 1
+                }.hook {
                     after {
                         sendLog(
                             "gg.getFile()",
                             if (printReturn) "--[[$result]]" else ""
                         )
                     }
-                }.ignoredAllFailure()
+                }
             }
     }
 
     private fun getLine() {
         "android.ext.ۧۧۡۡ"
-            .toClassOrNull()?.apply {
-                method {
+            .toClassOrNull()?.resolve()?.apply {
+                firstMethod {
                     name = "b"
-                    paramCount = 1
-                }.ignored().hook {
+                    parameterCount = 1
+                }.hook {
                     after {
                         sendLog(
                             "gg.getLine()",
                             if (printReturn) "--[[$result]]" else ""
                         )
                     }
-                }.ignoredAllFailure()
+                }
             }
     }
 
     private fun getListItems() {
         "android.ext.Script\$getListItems"
-            .toClassOrNull()?.apply {
-                method {
+            .toClassOrNull()?.resolve()?.apply {
+                firstMethod {
                     name = "b"
-                    paramCount = 1
-                }.ignored().hook {
+                    parameterCount = 1
+                }.hook {
                     after {
                         sendLog(
                             "gg.getListItems()",
                             if (printReturn) "--[[$result]]" else ""
                         )
                     }
-                }.ignoredAllFailure()
+                }
             }
     }
 
     private fun getLocale() {
         "android.ext.ۧۧۡۢ"
-            .toClassOrNull()?.apply {
-                method {
+            .toClassOrNull()?.resolve()?.apply {
+                firstMethod {
                     name = "b"
-                    paramCount = 1
-                }.ignored().hook {
+                    parameterCount = 1
+                }.hook {
                     after {
                         sendLog(
                             "gg.getLocale()",
                             if (printReturn) "--[[$result]]" else ""
                         )
                     }
-                }.ignoredAllFailure()
+                }
             }
     }
 
     private fun getProcess() {
         "android.ext.ۦۤۢۡ"
-            .toClassOrNull()?.apply {
-                method {
+            .toClassOrNull()?.resolve()?.apply {
+                firstMethod {
                     name = "b"
-                    paramCount = 1
-                }.ignored().hook {
+                    parameterCount = 1
+                }.hook {
                     after {
                         sendLog(
                             "gg.getProcess()",
                             if (printReturn) "--[[$result]]" else ""
                         )
                     }
-                }.ignoredAllFailure()
+                }
             }
     }
 
     private fun getRanges() {
         "android.ext.ۥۡ۟۠"
-            .toClassOrNull()?.apply {
-                method {
+            .toClassOrNull()?.resolve()?.apply {
+                firstMethod {
                     name = "b"
-                    paramCount = 1
-                }.ignored().hook {
+                    parameterCount = 1
+                }.hook {
                     after {
                         sendLog(
                             "gg.getRanges()",
                             if (printReturn) "--[[$result]]" else ""
                         )
                     }
-                }.ignoredAllFailure()
+                }
             }
     }
 
     private fun getRangesList() {
         "android.ext.ۥۡ۟۟"
-            .toClassOrNull()?.apply {
-                method {
+            .toClassOrNull()?.resolve()?.apply {
+                firstMethod {
                     name = "b"
-                    paramCount = 1
-                }.ignored().hook {
+                    parameterCount = 1
+                }.hook {
                     after {
                         val varArgs = args(0).any()
                         val filter = varArgs.optjstring(1, "")
@@ -562,17 +562,17 @@ object ELGGv125Hooker : BaseGGHooker() {
                             if (printReturn) "--[[$result]]" else ""
                         )
                     }
-                }.ignoredAllFailure()
+                }
             }
     }
 
     private fun getResults() {
         "android.ext.ۧۧۥۡ"
-            .toClassOrNull()?.apply {
-                method {
+            .toClassOrNull()?.resolve()?.apply {
+                firstMethod {
                     name = "d"
-                    paramCount = 1
-                }.ignored().hook {
+                    parameterCount = 1
+                }.hook {
                     after {
                         val varArgs = args(0).any()
                         val maxCount = varArgs.checkint(1)
@@ -596,136 +596,136 @@ object ELGGv125Hooker : BaseGGHooker() {
                             if (printReturn) "--[[$result]]" else ""
                         )
                     }
-                }.ignoredAllFailure()
+                }
             }
     }
 
     private fun getResultsCount() {
         "android.ext.ۥۡ۟ۢ"
-            .toClassOrNull()?.apply {
-                method {
+            .toClassOrNull()?.resolve()?.apply {
+                firstMethod {
                     name = "b"
-                    paramCount = 1
-                }.ignored().hook {
+                    parameterCount = 1
+                }.hook {
                     after {
                         sendLog(
                             "gg.getResultsCount()",
                             if (printReturn) "--[[$result]]" else ""
                         )
                     }
-                }.ignoredAllFailure()
+                }
             }
     }
 
     private fun getSelectedElements() {
         "android.ext.ۧۧۥۢ"
-            .toClassOrNull()?.apply {
-                method {
+            .toClassOrNull()?.resolve()?.apply {
+                firstMethod {
                     name = "d"
-                    paramCount = 1
-                }.ignored().hook {
+                    parameterCount = 1
+                }.hook {
                     after {
                         sendLog(
                             "gg.getSelectedElements()",
                             if (printReturn) "--[[$result]]" else ""
                         )
                     }
-                }.ignoredAllFailure()
+                }
             }
     }
 
     private fun getSelectedListItems() {
         "android.ext.ۧۧۥ۟"
-            .toClassOrNull()?.apply {
-                method {
+            .toClassOrNull()?.resolve()?.apply {
+                firstMethod {
                     name = "d"
-                    paramCount = 1
-                }.ignored().hook {
+                    parameterCount = 1
+                }.hook {
                     after {
                         sendLog(
                             "gg.getSelectedListItems()",
                             if (printReturn) "--[[$result]]" else ""
                         )
                     }
-                }.ignoredAllFailure()
+                }
             }
     }
 
     private fun getSelectedResults() {
         "android.ext.ۣ۟ۧ۠۠"
-            .toClassOrNull()?.apply {
-                method {
+            .toClassOrNull()?.resolve()?.apply {
+                firstMethod {
                     name = "d"
-                    paramCount = 1
-                }.ignored().hook {
+                    parameterCount = 1
+                }.hook {
                     after {
                         sendLog(
                             "gg.getSelectedResults()",
                             if (printReturn) "--[[$result]]" else ""
                         )
                     }
-                }.ignoredAllFailure()
+                }
             }
     }
 
     private fun getSpeed() {
         "android.ext.ۣ۟ۧ۠ۢ"
-            .toClassOrNull()?.apply {
-                method {
+            .toClassOrNull()?.resolve()?.apply {
+                firstMethod {
                     name = "b"
-                    paramCount = 1
-                }.ignored().hook {
+                    parameterCount = 1
+                }.hook {
                     after {
                         sendLog(
                             "gg.getSpeed()",
                             if (printReturn) "--[[$result]]" else ""
                         )
                     }
-                }.ignoredAllFailure()
+                }
             }
     }
 
     private fun getTargetInfo() {
         "android.ext.ۦۤۢ۟"
-            .toClassOrNull()?.apply {
-                method {
+            .toClassOrNull()?.resolve()?.apply {
+                firstMethod {
                     name = "b"
-                    paramCount = 1
-                }.ignored().hook {
+                    parameterCount = 1
+                }.hook {
                     after {
                         sendLog(
                             "gg.getTargetInfo()",
                             if (printReturn) "--[[$result]]" else ""
                         )
                     }
-                }.ignoredAllFailure()
+                }
             }
     }
 
     private fun getTargetPackage() {
         "android.ext.ۣ۟ۧ۠ۡ"
-            .toClassOrNull()?.apply {
-                method {
+            .toClassOrNull()?.resolve()?.apply {
+                firstMethod {
                     name = "b"
-                    paramCount = 1
-                }.ignored().hook {
+                    parameterCount = 1
+                }.hook {
                     after {
                         sendLog(
                             "gg.getTargetPackage()",
                             if (printReturn) "--[[$result]]" else ""
                         )
                     }
-                }.ignoredAllFailure()
+                }
             }
     }
 
     private fun getValues() {
         "android.ext.ۣ۟ۧ۠ۦ"
-            .toClassOrNull()?.apply {
-                method {
+            .toClassOrNull()?.resolve()?.apply {
+                firstMethod {
                     name = "b"
-                    paramCount = 1
-                }.ignored().hook {
+                    parameterCount = 1
+                }.hook {
                     after {
                         val varArgs = args(0).any()
                         val values = varArgs.checktable(1)
@@ -742,17 +742,17 @@ object ELGGv125Hooker : BaseGGHooker() {
                             if (printReturn) "--[[$result]]" else ""
                         )
                     }
-                }.ignoredAllFailure()
+                }
             }
     }
 
     private fun getValuesRange() {
         "android.ext.ۣ۟ۧ۠ۥ"
-            .toClassOrNull()?.apply {
-                method {
+            .toClassOrNull()?.resolve()?.apply {
+                firstMethod {
                     name = "b"
-                    paramCount = 1
-                }.ignored().hook {
+                    parameterCount = 1
+                }.hook {
                     after {
                         val varArgs = args(0).any()
                         val values = varArgs.checktable(1)
@@ -761,17 +761,17 @@ object ELGGv125Hooker : BaseGGHooker() {
                             if (printReturn) "--[[$result]]" else ""
                         )
                     }
-                }.ignoredAllFailure()
+                }
             }
     }
 
     private fun gotoAddress() {
         "android.ext.ۧۧۤۦ"
-            .toClassOrNull()?.apply {
-                method {
+            .toClassOrNull()?.resolve()?.apply {
+                firstMethod {
                     name = "d"
-                    paramCount = 1
-                }.ignored().hook {
+                    parameterCount = 1
+                }.hook {
                     after {
                         val varArgs = args(0).any()
                         val address = varArgs.checklong(1)
@@ -781,51 +781,51 @@ object ELGGv125Hooker : BaseGGHooker() {
                             if (printReturn) "--[[$result]]" else ""
                         )
                     }
-                }.ignoredAllFailure()
+                }
             }
     }
 
     private fun hideUiButton() {
         "android.ext.ۧۧۤۧ"
-            .toClassOrNull()?.apply {
-                method {
+            .toClassOrNull()?.resolve()?.apply {
+                firstMethod {
                     name = "d"
-                    paramCount = 1
-                }.ignored().hook {
+                    parameterCount = 1
+                }.hook {
                     after {
                         sendLog(
                             "gg.hideUiButton()",
                             if (printReturn) "--[[$result]]" else ""
                         )
                     }
-                }.ignoredAllFailure()
+                }
             }
     }
 
     private fun isClickedUiButton() {
         "android.ext.ۧۧۤۢ"
-            .toClassOrNull()?.apply {
-                method {
+            .toClassOrNull()?.resolve()?.apply {
+                firstMethod {
                     name = "b"
-                    paramCount = 1
-                }.ignored().hook {
+                    parameterCount = 1
+                }.hook {
                     after {
                         sendLog(
                             "gg.isClickedUiButton()",
                             if (printReturn) "--[[$result]]" else ""
                         )
                     }
-                }.ignoredAllFailure()
+                }
             }
     }
 
     private fun isPackageInstalled() {
         "android.ext.ۦۤۡ۟"
-            .toClassOrNull()?.apply {
-                method {
+            .toClassOrNull()?.resolve()?.apply {
+                firstMethod {
                     name = "b"
-                    paramCount = 1
-                }.ignored().hook {
+                    parameterCount = 1
+                }.hook {
                     after {
                         val varArgs = args(0).any()
                         val pkg = varArgs.checkjstring(1)
@@ -835,68 +835,68 @@ object ELGGv125Hooker : BaseGGHooker() {
                             if (printReturn) "--[[$result]]" else ""
                         )
                     }
-                }.ignoredAllFailure()
+                }
             }
     }
 
     private fun isProcessPaused() {
         "android.ext.ۦۤۡۢ"
-            .toClassOrNull()?.apply {
-                method {
+            .toClassOrNull()?.resolve()?.apply {
+                firstMethod {
                     name = "b"
-                    paramCount = 1
-                }.ignored().hook {
+                    parameterCount = 1
+                }.hook {
                     after {
                         sendLog(
                             "gg.isProcessPaused()",
                             if (printReturn) "--[[$result]]" else ""
                         )
                     }
-                }.ignoredAllFailure()
+                }
             }
     }
 
     private fun isVPN() {
         "android.ext.۟ۧ۠ۤ۟"
-            .toClassOrNull()?.apply {
-                method {
+            .toClassOrNull()?.resolve()?.apply {
+                firstMethod {
                     name = "b"
-                    paramCount = 1
-                }.ignored().hook {
+                    parameterCount = 1
+                }.hook {
                     after {
                         sendLog(
                             "gg.isVPN()",
                             if (printReturn) "--[[$result]]" else ""
                         )
                     }
-                }.ignoredAllFailure()
+                }
             }
     }
 
     private fun isVisible() {
         "android.ext.ۧۧۤۡ"
-            .toClassOrNull()?.apply {
-                method {
+            .toClassOrNull()?.resolve()?.apply {
+                firstMethod {
                     name = "b"
-                    paramCount = 1
-                }.ignored().hook {
+                    parameterCount = 1
+                }.hook {
                     after {
                         sendLog(
                             "gg.isVisible()",
                             if (printReturn) "--[[$result]]" else ""
                         )
                     }
-                }.ignoredAllFailure()
+                }
             }
     }
 
     private fun loadList() {
         "android.ext.۟ۧ۠ۤۡ"
-            .toClassOrNull()?.apply {
-                method {
+            .toClassOrNull()?.resolve()?.apply {
+                firstMethod {
                     name = "d"
-                    paramCount = 1
-                }.ignored().hook {
+                    parameterCount = 1
+                }.hook {
                     after {
                         val varArgs = args(0).any()
                         val file = varArgs.checkjstring(1)
@@ -908,17 +908,17 @@ object ELGGv125Hooker : BaseGGHooker() {
                             if (printReturn) "--[[$result]]" else ""
                         )
                     }
-                }.ignoredAllFailure()
+                }
             }
     }
 
     private fun loadResults() {
         "android.ext.۟ۧ۠ۤ۠"
-            .toClassOrNull()?.apply {
-                method {
+            .toClassOrNull()?.resolve()?.apply {
+                firstMethod {
                     name = "b"
-                    paramCount = 1
-                }.ignored().hook {
+                    parameterCount = 1
+                }.hook {
                     after {
                         val varArgs = args(0).any()
                         val results = varArgs.checktable(1)
@@ -935,17 +935,17 @@ object ELGGv125Hooker : BaseGGHooker() {
                             if (printReturn) "--[[$result]]" else ""
                         )
                     }
-                }.ignoredAllFailure()
+                }
             }
     }
 
     private fun makeRequest() {
         "android.ext.Script\$makeRequest"
-            .toClassOrNull()?.apply {
-                method {
+            .toClassOrNull()?.resolve()?.apply {
+                firstMethod {
                     name = "b"
-                    paramCount = 1
-                }.ignored().hook {
+                    parameterCount = 1
+                }.hook {
                     after {
                         val varArgs = args(0).any()
                         val url = varArgs.checkjstring(1)
@@ -958,17 +958,17 @@ object ELGGv125Hooker : BaseGGHooker() {
                             if (printReturn) "--[[$result]]" else ""
                         )
                     }
-                }.ignoredAllFailure()
+                }
             }
     }
 
     private fun multiChoice() {
         "android.ext.۟ۧ۠ۤۢ"
-            .toClassOrNull()?.apply {
-                method {
+            .toClassOrNull()?.resolve()?.apply {
+                firstMethod {
                     name = "b"
-                    paramCount = 1
-                }.ignored().hook {
+                    parameterCount = 1
+                }.hook {
                     after {
                         val varArgs = args(0).any()
                         val items = varArgs.checktable(1)
@@ -980,17 +980,17 @@ object ELGGv125Hooker : BaseGGHooker() {
                             if (printReturn) "--[[$result]]" else ""
                         )
                     }
-                }.ignoredAllFailure()
+                }
             }
     }
 
     private fun numberFromLocale() {
         "android.ext.۟ۧ۠ۤۥ"
-            .toClassOrNull()?.apply {
-                method {
+            .toClassOrNull()?.resolve()?.apply {
+                firstMethod {
                     name = "b"
-                    paramCount = 1
-                }.ignored().hook {
+                    parameterCount = 1
+                }.hook {
                     after {
                         val varArgs = args(0).any()
                         val num = varArgs.tojstring(1)
@@ -1000,17 +1000,17 @@ object ELGGv125Hooker : BaseGGHooker() {
                             if (printReturn) "--[[$result]]" else ""
                         )
                     }
-                }.ignoredAllFailure()
+                }
             }
     }
 
     private fun numberToLocale() {
         "android.ext.۟ۧ۠ۤۦ"
-            .toClassOrNull()?.apply {
-                method {
+            .toClassOrNull()?.resolve()?.apply {
+                firstMethod {
                     name = "b"
-                    paramCount = 1
-                }.ignored().hook {
+                    parameterCount = 1
+                }.hook {
                     after {
                         val varArgs = args(0).any()
                         val num = varArgs.tojstring(1)
@@ -1021,17 +1021,17 @@ object ELGGv125Hooker : BaseGGHooker() {
                             if (printReturn) "--[[$result]]" else ""
                         )
                     }
-                }.ignoredAllFailure()
+                }
             }
     }
 
     private fun playVideo() {
         "android.ext.ۦۤ۠ۧ"
-            .toClassOrNull()?.apply {
-                method {
+            .toClassOrNull()?.resolve()?.apply {
+                firstMethod {
                     name = "b"
-                    paramCount = 1
-                }.ignored().hook {
+                    parameterCount = 1
+                }.hook {
                     after {
                         val varArgs = args(0).any()
                         val urlOrFilePath = varArgs.checkjstring(1)
@@ -1041,85 +1041,85 @@ object ELGGv125Hooker : BaseGGHooker() {
                             if (printReturn) "--[[$result]]" else ""
                         )
                     }
-                }.ignoredAllFailure()
+                }
             }
     }
 
     private fun processKill() {
         "android.ext.ۦۣۤ۠"
-            .toClassOrNull()?.apply {
-                method {
+            .toClassOrNull()?.resolve()?.apply {
+                firstMethod {
                     name = "b"
-                    paramCount = 1
-                }.ignored().hook {
+                    parameterCount = 1
+                }.hook {
                     after {
                         sendLog(
                             "gg.processKill()",
                             if (printReturn) "--[[$result]]" else ""
                         )
                     }
-                }.ignoredAllFailure()
+                }
             }
     }
 
     private fun processPause() {
         "android.ext.ۣۧۧۥ"
-            .toClassOrNull()?.apply {
-                method {
+            .toClassOrNull()?.resolve()?.apply {
+                firstMethod {
                     name = "d"
-                    paramCount = 1
-                }.ignored().hook {
+                    parameterCount = 1
+                }.hook {
                     after {
                         sendLog(
                             "gg.processPause()",
                             if (printReturn) "--[[$result]]" else ""
                         )
                     }
-                }.ignoredAllFailure()
+                }
             }
     }
 
     private fun processResume() {
         "android.ext.ۦۤ۠ۢ"
-            .toClassOrNull()?.apply {
-                method {
+            .toClassOrNull()?.resolve()?.apply {
+                firstMethod {
                     name = "d"
-                    paramCount = 1
-                }.ignored().hook {
+                    parameterCount = 1
+                }.hook {
                     after {
                         sendLog(
                             "gg.processResume()",
                             if (printReturn) "--[[$result]]" else ""
                         )
                     }
-                }.ignoredAllFailure()
+                }
             }
     }
 
     private fun processToggle() {
         "android.ext.ۣۧۧۦ"
-            .toClassOrNull()?.apply {
-                method {
+            .toClassOrNull()?.resolve()?.apply {
+                firstMethod {
                     name = "d"
-                    paramCount = 1
-                }.ignored().hook {
+                    parameterCount = 1
+                }.hook {
                     after {
                         sendLog(
                             "gg.processToggle()",
                             if (printReturn) "--[[$result]]" else ""
                         )
                     }
-                }.ignoredAllFailure()
+                }
             }
     }
 
     private fun prompt() {
         "android.ext.ۦۣۤۤ"
-            .toClassOrNull()?.apply {
-                method {
+            .toClassOrNull()?.resolve()?.apply {
+                firstMethod {
                     name = "b"
-                    paramCount = 1
-                }.ignored().hook {
+                    parameterCount = 1
+                }.hook {
                     after {
                         val varArgs = args(0).any()
                         val items = varArgs.checktable(1)
@@ -1130,17 +1130,17 @@ object ELGGv125Hooker : BaseGGHooker() {
                             if (printReturn) "--[[$result]]" else ""
                         )
                     }
-                }.ignoredAllFailure()
+                }
             }
     }
 
     private fun removeListItems() {
         "android.ext.ۧۧۧۤ"
-            .toClassOrNull()?.apply {
-                method {
+            .toClassOrNull()?.resolve()?.apply {
+                firstMethod {
                     name = "b"
-                    paramCount = 1
-                }.ignored().hook {
+                    parameterCount = 1
+                }.hook {
                     after {
                         val varArgs = args(0).any()
                         val items = varArgs.checktable(1)
@@ -1157,17 +1157,17 @@ object ELGGv125Hooker : BaseGGHooker() {
                             if (printReturn) "--[[$result]]" else ""
                         )
                     }
-                }.ignoredAllFailure()
+                }
             }
     }
 
     private fun removeResults() {
         "android.ext.۟ۧ۠ۥۢ"
-            .toClassOrNull()?.apply {
-                method {
+            .toClassOrNull()?.resolve()?.apply {
+                firstMethod {
                     name = "b"
-                    paramCount = 1
-                }.ignored().hook {
+                    parameterCount = 1
+                }.hook {
                     after {
                         val varArgs = args(0).any()
                         val results = varArgs.checktable(1)
@@ -1184,17 +1184,17 @@ object ELGGv125Hooker : BaseGGHooker() {
                             if (printReturn) "--[[$result]]" else ""
                         )
                     }
-                }.ignoredAllFailure()
+                }
             }
     }
 
     private fun require() {
         "android.ext.ۧۧۧۡ"
-            .toClassOrNull()?.apply {
-                method {
+            .toClassOrNull()?.resolve()?.apply {
+                firstMethod {
                     name = "b"
-                    paramCount = 1
-                }.ignored().hook {
+                    parameterCount = 1
+                }.hook {
                     after {
                         val varArgs = args(0).any()
                         val version = varArgs.optjstring(1, "0")
@@ -1205,17 +1205,17 @@ object ELGGv125Hooker : BaseGGHooker() {
                             if (printReturn) "--[[$result]]" else ""
                         )
                     }
-                }.ignoredAllFailure()
+                }
             }
     }
 
     private fun saveList() {
         "android.ext.ۦۤۤ۟"
-            .toClassOrNull()?.apply {
-                method {
+            .toClassOrNull()?.resolve()?.apply {
+                firstMethod {
                     name = "d"
-                    paramCount = 1
-                }.ignored().hook {
+                    parameterCount = 1
+                }.hook {
                     after {
                         val varArgs = args(0).any()
                         val file = varArgs.checkjstring(1)
@@ -1227,17 +1227,17 @@ object ELGGv125Hooker : BaseGGHooker() {
                             if (printReturn) "--[[$result]]" else ""
                         )
                     }
-                }.ignoredAllFailure()
+                }
             }
     }
 
     private fun saveVariable() {
         "android.ext.ۦۤۤۡ"
-            .toClassOrNull()?.apply {
-                method {
+            .toClassOrNull()?.resolve()?.apply {
+                firstMethod {
                     name = "b"
-                    paramCount = 1
-                }.ignored().hook {
+                    parameterCount = 1
+                }.hook {
                     after {
                         val varArgs = args(0).any()
                         val variable = varArgs.arg(1)
@@ -1248,17 +1248,17 @@ object ELGGv125Hooker : BaseGGHooker() {
                             if (printReturn) "--[[$result]]" else ""
                         )
                     }
-                }.ignoredAllFailure()
+                }
             }
     }
 
     private fun searchAddress() {
         "android.ext.ۣۧۧۧ"
-            .toClassOrNull()?.apply {
-                method {
+            .toClassOrNull()?.resolve()?.apply {
+                firstMethod {
                     name = "d"
-                    paramCount = 1
-                }.ignored().hook {
+                    parameterCount = 1
+                }.hook {
                     after {
                         val funcName = GGUtil.getFuncName(
                             instanceClass,
@@ -1286,17 +1286,17 @@ object ELGGv125Hooker : BaseGGHooker() {
                             if (printReturn) "--[[$result]]" else ""
                         )
                     }
-                }.ignoredAllFailure()
+                }
             }
     }
 
     private fun searchFuzzy() {
         "android.ext.۟ۧ۠ۥۥ"
-            .toClassOrNull()?.apply {
-                method {
+            .toClassOrNull()?.resolve()?.apply {
+                firstMethod {
                     name = "d"
-                    paramCount = 1
-                }.ignored().hook {
+                    parameterCount = 1
+                }.hook {
                     after {
                         val varArgs = args(0).any()
                         val difference = varArgs.optjstring(1, "0")
@@ -1316,17 +1316,17 @@ object ELGGv125Hooker : BaseGGHooker() {
                             if (printReturn) "--[[$result]]" else ""
                         )
                     }
-                }.ignoredAllFailure()
+                }
             }
     }
 
     private fun searchNumber() {
         "android.ext.ۥۡۡۤ"
-            .toClassOrNull()?.apply {
-                method {
+            .toClassOrNull()?.resolve()?.apply {
+                firstMethod {
                     name = "d"
-                    paramCount = 1
-                }.ignored().hook {
+                    parameterCount = 1
+                }.hook {
                     after {
                         val funcName = GGUtil.getFuncName(
                             instanceClass,
@@ -1363,17 +1363,17 @@ object ELGGv125Hooker : BaseGGHooker() {
                             if (printReturn) "--[[$result]]" else ""
                         )
                     }
-                }.ignoredAllFailure()
+                }
             }
     }
 
     private fun searchPointer() {
         "android.ext.۟ۧ۠ۥۧ"
-            .toClassOrNull()?.apply {
-                method {
+            .toClassOrNull()?.resolve()?.apply {
+                firstMethod {
                     name = "d"
-                    paramCount = 1
-                }.ignored().hook {
+                    parameterCount = 1
+                }.hook {
                     after {
                         val varArgs = args(0).any()
                         val maxOffset = varArgs.checkint(1)
@@ -1387,17 +1387,17 @@ object ELGGv125Hooker : BaseGGHooker() {
                             if (printReturn) "--[[$result]]" else ""
                         )
                     }
-                }.ignoredAllFailure()
+                }
             }
     }
 
     private fun setConfig() {
         "android.ext.ۥۡ۠ۥ"
-            .toClassOrNull()?.apply {
-                method {
+            .toClassOrNull()?.resolve()?.apply {
+                firstMethod {
                     name = "a_"
-                    paramCount = 1
-                }.ignored().hook {
+                    parameterCount = 1
+                }.hook {
                     after {
                         val varArgs = args(0).any()
                         val id = varArgs.checkint(1)
@@ -1407,17 +1407,17 @@ object ELGGv125Hooker : BaseGGHooker() {
                             if (printReturn) "--[[$result]]" else ""
                         )
                     }
-                }.ignoredAllFailure()
+                }
             }
     }
 
     private fun setProcess() {
         "android.ext.ۧۧۦۨ"
-            .toClassOrNull()?.apply {
-                method {
+            .toClassOrNull()?.resolve()?.apply {
+                firstMethod {
                     name = "b"
-                    paramCount = 1
-                }.ignored().hook {
+                    parameterCount = 1
+                }.hook {
                     after {
                         val varArgs = args(0).any()
                         val indexOrPackageName = varArgs.arg(1)
@@ -1427,34 +1427,34 @@ object ELGGv125Hooker : BaseGGHooker() {
                             if (printReturn) "--[[$result]]" else ""
                         )
                     }
-                }.ignoredAllFailure()
+                }
             }
     }
 
     private fun setProcessX() {
         "android.ext.ۦۣۤۦ"
-            .toClassOrNull()?.apply {
-                method {
+            .toClassOrNull()?.resolve()?.apply {
+                firstMethod {
                     name = "b"
-                    paramCount = 1
-                }.ignored().hook {
+                    parameterCount = 1
+                }.hook {
                     after {
                         sendLog(
                             "gg.setProcessX()",
                             if (printReturn) "--[[$result]]" else ""
                         )
                     }
-                }.ignoredAllFailure()
+                }
             }
     }
 
     private fun setRanges() {
         "android.ext.ۦۣۤۥ"
-            .toClassOrNull()?.apply {
-                method {
+            .toClassOrNull()?.resolve()?.apply {
+                firstMethod {
                     name = "d"
-                    paramCount = 1
-                }.ignored().hook {
+                    parameterCount = 1
+                }.hook {
                     after {
                         val varArgs = args(0).any()
                         val ranges = varArgs.checkint(1)
@@ -1464,17 +1464,17 @@ object ELGGv125Hooker : BaseGGHooker() {
                             if (printReturn) "--[[$result]]" else ""
                         )
                     }
-                }.ignoredAllFailure()
+                }
             }
     }
 
     private fun setSpeed() {
         "android.ext.ۥۡ۠ۤ"
-            .toClassOrNull()?.apply {
-                method {
+            .toClassOrNull()?.resolve()?.apply {
+                firstMethod {
                     name = "d"
-                    paramCount = 1
-                }.ignored().hook {
+                    parameterCount = 1
+                }.hook {
                     after {
                         val varArgs = args(0).any()
                         val speed = varArgs.checkdouble(1)
@@ -1483,17 +1483,17 @@ object ELGGv125Hooker : BaseGGHooker() {
                             if (printReturn) "--[[$result]]" else ""
                         )
                     }
-                }.ignoredAllFailure()
+                }
             }
     }
 
     private fun setValues() {
         "android.ext.Script\$setValues"
-            .toClassOrNull()?.apply {
-                method {
+            .toClassOrNull()?.resolve()?.apply {
+                firstMethod {
                     name = "b"
-                    paramCount = 1
-                }.ignored().hook {
+                    parameterCount = 1
+                }.hook {
                     after {
                         val varArgs = args(0).any()
                         val values = varArgs.checktable(1)
@@ -1510,17 +1510,17 @@ object ELGGv125Hooker : BaseGGHooker() {
                             if (printReturn) "--[[$result]]" else ""
                         )
                     }
-                }.ignoredAllFailure()
+                }
             }
     }
 
     private fun setVisible() {
         "android.ext.ۥۡ۠ۧ"
-            .toClassOrNull()?.apply {
-                method {
+            .toClassOrNull()?.resolve()?.apply {
+                firstMethod {
                     name = "d"
-                    paramCount = 1
-                }.ignored().hook {
+                    parameterCount = 1
+                }.hook {
                     after {
                         val varArgs = args(0).any()
                         val visible = varArgs.checkboolean(1)
@@ -1529,51 +1529,51 @@ object ELGGv125Hooker : BaseGGHooker() {
                             if (printReturn) "--[[$result]]" else ""
                         )
                     }
-                }.ignoredAllFailure()
+                }
             }
     }
 
     private fun showUiButton() {
         "android.ext.ۧۧۦۦ"
-            .toClassOrNull()?.apply {
-                method {
+            .toClassOrNull()?.resolve()?.apply {
+                firstMethod {
                     name = "d"
-                    paramCount = 1
-                }.ignored().hook {
+                    parameterCount = 1
+                }.hook {
                     after {
                         sendLog(
                             "gg.showUiButton()",
                             if (printReturn) "--[[$result]]" else ""
                         )
                     }
-                }.ignoredAllFailure()
+                }
             }
     }
 
     private fun skipRestoreState() {
         "android.ext.ۦۣۤۧ"
-            .toClassOrNull()?.apply {
-                method {
+            .toClassOrNull()?.resolve()?.apply {
+                firstMethod {
                     name = "b"
-                    paramCount = 1
-                }.ignored().hook {
+                    parameterCount = 1
+                }.hook {
                     after {
                         sendLog(
                             "gg.skipRestoreState()",
                             if (printReturn) "--[[$result]]" else ""
                         )
                     }
-                }.ignoredAllFailure()
+                }
             }
     }
 
     private fun sleep() {
         "android.ext.ۧۧۦۧ"
-            .toClassOrNull()?.apply {
-                method {
+            .toClassOrNull()?.resolve()?.apply {
+                firstMethod {
                     name = "b"
-                    paramCount = 1
-                }.ignored().hook {
+                    parameterCount = 1
+                }.hook {
                     after {
                         val varArgs = args(0).any()
                         val milliseconds = varArgs.checkint(1)
@@ -1582,17 +1582,17 @@ object ELGGv125Hooker : BaseGGHooker() {
                             if (printReturn) "--[[$result]]" else ""
                         )
                     }
-                }.ignoredAllFailure()
+                }
             }
     }
 
     private fun startFuzzy() {
         "android.ext.ۥۡ۠ۡ"
-            .toClassOrNull()?.apply {
-                method {
+            .toClassOrNull()?.resolve()?.apply {
+                firstMethod {
                     name = "d"
-                    paramCount = 1
-                }.ignored().hook {
+                    parameterCount = 1
+                }.hook {
                     after {
                         val varArgs = args(0).any()
                         val type = varArgs.optint(1, 127)
@@ -1606,17 +1606,17 @@ object ELGGv125Hooker : BaseGGHooker() {
                             if (printReturn) "--[[$result]]" else ""
                         )
                     }
-                }.ignoredAllFailure()
+                }
             }
     }
 
     private fun timeJump() {
         "android.ext.ۦۣۤۡ"
-            .toClassOrNull()?.apply {
-                method {
+            .toClassOrNull()?.resolve()?.apply {
+                firstMethod {
                     name = "d"
-                    paramCount = 1
-                }.ignored().hook {
+                    parameterCount = 1
+                }.hook {
                     after {
                         val varArgs = args(0).any()
                         val time = varArgs.checkjstring(1)
@@ -1627,17 +1627,17 @@ object ELGGv125Hooker : BaseGGHooker() {
                             if (printReturn) "--[[$result]]" else ""
                         )
                     }
-                }.ignoredAllFailure()
+                }
             }
     }
 
     private fun toast() {
         "android.ext.ۥۣۡ۠"
-            .toClassOrNull()?.apply {
-                method {
+            .toClassOrNull()?.resolve()?.apply {
+                firstMethod {
                     name = "b"
-                    paramCount = 1
-                }.ignored().hook {
+                    parameterCount = 1
+                }.hook {
                     after {
                         val varArgs = args(0).any()
                         val text = varArgs.checkjstring(1)
@@ -1648,17 +1648,17 @@ object ELGGv125Hooker : BaseGGHooker() {
                             if (printReturn) "--[[$result]]" else ""
                         )
                     }
-                }.ignoredAllFailure()
+                }
             }
     }
 
     private fun unrandomizer() {
         "android.ext.۟ۧ۠ۦۡ"
-            .toClassOrNull()?.apply {
-                method {
+            .toClassOrNull()?.resolve()?.apply {
+                firstMethod {
                     name = "d"
-                    paramCount = 1
-                }.ignored().hook {
+                    parameterCount = 1
+                }.hook {
                     after {
                         val varArgs = args(0).any()
                         val qword = varArgs.optlong(1, 0L)
@@ -1670,7 +1670,7 @@ object ELGGv125Hooker : BaseGGHooker() {
                             if (printReturn) "--[[$result]]" else ""
                         )
                     }
-                }.ignoredAllFailure()
+                }
             }
     }
 }
