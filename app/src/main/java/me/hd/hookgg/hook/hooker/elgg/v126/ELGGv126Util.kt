@@ -6,7 +6,7 @@ import me.hd.hookgg.hook.hooker.elgg.v126.ELGGv126Hooker.toClass
 
 object ELGGv126Util {
     fun decryptText(text: String): Any {
-        val clazz = "android.ext.۟ۧ۠۠ۧ".toClass()
+       val clazz = "android.ext.۟ۧ۠۟ۧ".toClass()
         val parameterTypes = arrayOf(StringClass)
         return callStaticMethod(clazz, "a", parameterTypes, text)
     }
